@@ -22,7 +22,10 @@ Route::get('about', function () {
 });
 
 Route::get('mahasiswa', function () {
-    return view ('mahasiswa');
+    $npm = [123, 124,125,126];
+    $nama = ['Amira', 'Salsabila', 'Dono', 'Siti Mujaroh'];
+    $jumlah =count($npm);
+    return view ('mahasiswa', compact('npm', 'jumlah', 'nama'));
 });
 
 Route::get('profile', function () {
@@ -30,3 +33,9 @@ Route::get('profile', function () {
     //return view ('profile', compact('nama'));
     return view ('profile')->with('nama', $nama);
 });
+
+//Route::get('array', function () {
+    //for ($i=1; $i <= 5; $i++){
+        //echo 'Hello World' . $i . '<br>';
+    //}
+//});
